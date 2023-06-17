@@ -1,0 +1,46 @@
+.heading{
+    font-size:larger;
+    font-weight: bolder;
+}
+
+table,tr,td{
+    border:1px solid gray;
+}
+
+tr,td{
+    text-align:center;
+}
+
+.divtab{
+    padding-left: 20%;
+}
+.table{
+    width: 70%;
+}
+
+.btn {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+cursor: pointer;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+.btn-primary {
+color: #fff;
+background-color: #007bff;
+border-color: #007bff;
+}
+
+.btn-danger {
+color: #fff;
+background-color: #dc3545;
+border-color: #dc3545;
+}

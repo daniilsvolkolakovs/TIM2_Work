@@ -1,6 +1,14 @@
 <x-app-layout>
     <div style="padding-left: 40%; padding-top: 10%;">
-        <label style="padding-left: 7%; font-size: 20px; font-weight: bold;">Add your Audi Foto</label>
+        
+        <form action="{{url('view_post')}}" method="get" style="padding-bottom:10px ;">
+            @csrf
+            <div>
+                <input type="submit" value="View my Post" style="background: blue ; color: white; cursore: pointer; padding: 5px; border-radius: 10px;">
+            </div>
+        </form>
+
+        <label style="padding-left: 7%;font-size: 20px; font-weight: bold;">Add your Audi Foto</label>
         <br><br>
         <form action="{{url('upload_post')}}" method="POST" enctype="multipart/form-data">
             @csrf

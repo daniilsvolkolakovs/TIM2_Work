@@ -42,4 +42,48 @@ class HomeController extends Controller
 
 
     }
+
+    public function view_post(){
+        $name=Auth::user()->name;
+
+        $post=Post::where('username','=',$name)->get();
+
+        return view('post_page',compact('post'));
+    }
+
+    public function delete_post($id){
+        $data=post::find($id);
+
+        $data->delete();
+
+        return redirect()->back();
+    }
+
+    public function update_post($id){
+        $data=post::find($id);
+
+        return view('updatepost', compact('data'));
+    }
+
+    public function confirm_update(Request $request ,$id){
+        $post=post::find($id);
+
+        $post->desription=$request->desription;
+
+        $image=$request->image;
+
+        if($image){
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+
+        $request->image->move('post', $imagename);
+        
+        //image part end here
+
+        $post->image=$imagename;
+        }
+
+        $post->save();
+
+        return redirect()->back();
+    }
 }
