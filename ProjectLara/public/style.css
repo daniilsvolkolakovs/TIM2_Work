@@ -28,11 +28,12 @@ ul li a{
     color: rgb(255, 255, 255);
     font-weight: bold;
     font-family: 'Audi Type', sans-serif;
-    -webkit-text-stroke: 5% black; /* Safari, Chrome */
-    text-stroke: 5% black; /* Firefox */
-    -moz-text-stroke: 5% black; /* Firefox (старые версии) */
-    -ms-text-stroke: 5% black; /* Internet Explorer */
-    -o-text-stroke: 5% black; /* Opera */
+    cursore: pointer;
+    -webkit-text-stroke: black; /* Safari, Chrome */
+    text-stroke: black; /* Firefox */
+    -moz-text-stroke: black; /* Firefox (старые версии) */
+    -ms-text-stroke: black; /* Internet Explorer */
+    -o-text-stroke: black; /* Opera */
 }
 
 .logo{

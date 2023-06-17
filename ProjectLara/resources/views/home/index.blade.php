@@ -20,7 +20,7 @@
 </head>
 <body>
     <nav>
-        <label class="logo">Audi Services</label>
+        <label class="logo">Audi Forum</label>
         <ul>
             <li>
                 <a href="">Home</a>
@@ -28,20 +28,41 @@
             <li>
                 <a href="">About</a>
             </li>
-            <li>
-                <a href="{{ route('register') }}" class="btn btn-success">Registration</a>
-            </li>
-            <li>
-                <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
-            </li>
+
+            @if (Route::has('login'))
+
+                @auth
+                <li>
+                    <a href="{{ url('/dashboard') }}" class="btn btn-success">{{Auth::user()->name}}</a>
+                </li>
+
+                @else
+
+                    <li>
+                        <a href="{{ route('register') }}" class="btn btn-success">Registration</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+                    </li>
+                @endauth
+            @endif
         </ul>
     </nav>
     <div class="audi_foto">
         <img src="a5.jpg" alt="Audi A5" width=100%>
     </div>
+    
     <div class="dev_deg">
-        <label for="">Audi</label>
+        <label>Audi</label>
         <p>Audi AG (Audi) a subsidiary of Volkswagen AG, is an automobile manufacturer. It designs, develops, manufactures, and commercializes premium cars, and motorcycles globally. The company is recognized as one of the leading car manufacturers in the premium and supercar segment. It focuses on innovation through its research and development activities and has partnerships with national and international academic partners. Audi also offers financial services such as leasing and borrowings through cooperation with Volkswagen Financial Services AG. The company operates production facilities together with its subsidiaries in Americas, Europe. The Middle East and Asia-Pacific. Audi is headquartered in Ingolstadt, Bayern, Germany.</p>
     </div>
+    
+    @foreach($post as $post)
+    <div class="dev_deg">
+        <label>{{$post->username}}</label>
+        <p>{{$post->desription}}</p>
+        <img src="post/{{$post->image}}" width=300px>
+    </div>
+    @endforeach
 </body>
 </html>
