@@ -25,7 +25,7 @@ class HomeController extends Controller
             else{
                 return redirect()->back();
             }
-            return view('home.index', ['post' => $post]);
+            return view('index', ['post' => $post]);
         }
     }
 

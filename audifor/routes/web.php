@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +26,10 @@ Route::get('/delete_post/{id}',[HomeController::class,'delete_post']);
 Route::get('/update_post/{id}',[HomeController::class,'update_post']);
 
 Route::post('/confirm_update/{id}',[HomeController::class,'confirm_update']);
+
+Route::get('/post_admin', [AdminController::class, 'index'])->name('post_admin');
+
+Route::delete('/users/{user}', [AdminController::class, 'deleteUser'])->name('delete_user');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

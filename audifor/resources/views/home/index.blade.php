@@ -62,6 +62,12 @@
                 The company operates production facilities together with its subsidiaries in Americas, Europe. 
                 The Middle East and Asia-Pacific. Audi is headquartered in Ingolstadt, Bayern, Germany.</p>
         </div>
-        
+        @foreach($post as $post)
+            <div class="dev_deg">
+                <label>{{$post->username}}</label>
+                <p>{{$post->desription}}</p>
+                <img src="post/{{$post->image}}" width=300px>
+            </div>
+        @endforeach
     </body>
 </html>
